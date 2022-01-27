@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sand-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
