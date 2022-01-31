@@ -1,7 +1,6 @@
 import { BsCartPlus } from "react-icons/bs";
 
-export default function ItemPanel({ product }) {
-  console.log(product);
+export default function ItemPanel({ product, onAdd }) {
   return (
     <div className="h-48 bg-white border-slate-500 border-8 flex">
       <img src={product.image} className="h-full p-5" />
@@ -12,7 +11,7 @@ export default function ItemPanel({ product }) {
         <div className=" my-auto text-xl font-medium">{product.desc}</div>
       </div>
       <div className="p-3 rounded-md relative top-1/3 h-1/3 bg-slate-900 text-white text-xl flex items-center ml-auto mr-40 ">
-        <button>Add to Cart</button>
+        <button onClick={() => onAdd(product)}>Add to Cart</button>
         <BsCartPlus className="text-3xl" />
       </div>
     </div>
