@@ -28,6 +28,27 @@ const data = {
       desc: "Durable chew toy your dog is sure to love!",
       image: "/toys/toy4.png",
     },
+    {
+      id: "5",
+      name: "Latex Cow Toy",
+      price: 12,
+      desc: "Durable chew toy your dog is sure to love!",
+      image: "/toys/toy4.png",
+    },
+    {
+      id: "6",
+      name: "Latex Cow Toy",
+      price: 12,
+      desc: "Durable chew toy your dog is sure to love!",
+      image: "/toys/toy4.png",
+    },
+    {
+      id: "7",
+      name: "Latex Cow Toy",
+      price: 12,
+      desc: "Durable chew toy your dog is sure to love!",
+      image: "/toys/toy4.png",
+    },
   ],
 };
 
