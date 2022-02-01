@@ -50,9 +50,6 @@ export default function Home() {
       </Head>
 
       <Header />
-      <div className="flex flex-col justify-end  bg-slate-400">
-        <p>hi</p>
-      </div>
 
       <div className="flex h-full">
         <Sidebar cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />

@@ -1,3 +1,5 @@
+import Accordion from "react-bootstrap/Accordion";
+
 export default function Sidebar({ cartItems, onAdd, onRemove }) {
   let total = 0;
   for (let i of cartItems) {
@@ -16,22 +18,38 @@ export default function Sidebar({ cartItems, onAdd, onRemove }) {
         <li>Accessories</li>
       </ul>
 
-      <div>
-        <h2 className="text-3xl font-bold py-8">Cart</h2>
-        <div>{cartItems.length === 0 && <div>Cart is Empty</div>}</div>
-        {cartItems.map((item) => (
-          <div className="flex" key={item.id}>
-            <div>{item.name}</div>
-            <div>{item.qty}</div>
-            <button onClick={() => onAdd(item)}>+</button>
-            <button onClick={() => onRemove(item)}>-</button>
-            <div>
-              {item.qty} x ${item.price}
+      <Accordion>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header className="text-3xl font-semibold py-8">
+            <b>Cart</b>
+          </Accordion.Header>
+          <Accordion.Body>
+            <div className="bg-white rounded-lg">
+              <div>{cartItems.length === 0 && <div>Cart is Empty</div>}</div>
+              {cartItems.map((item) => (
+                <div
+                  className="flex py-2 w-1/5 ml-4 items-center "
+                  key={item.id}
+                >
+                  <img className="max-h-full max-w-full" src={item.image} />
+                  <div className="px-4 text-xl font-semibold">{item.name}</div>
+                  <div className="flex inline-flex">
+                    <button onClick={() => onAdd(item)}>+</button>
+                    <div className="px-3">{item.qty}</div>
+                    <button onClick={() => onRemove(item)}>-</button>
+                  </div>
+                  <div className="inline ml-10">
+                    <span>
+                      {item.qty + " x"} ${item.price}
+                    </span>
+                  </div>
+                </div>
+              ))}
+              {total === 0 ? null : total}
             </div>
-          </div>
-        ))}
-        {total === 0 ? null : total}
-      </div>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
     </div>
   );
 }
