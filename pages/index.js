@@ -64,7 +64,7 @@ export default function Home() {
       </div>
 
       <div className="h-24 text-white items-center justify-center flex bg-slate-900">
-        Footer
+        Copyright &#169; 2022 Woofmart by Hamraj Khangura
       </div>
     </div>
   );

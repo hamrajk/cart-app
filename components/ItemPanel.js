@@ -2,8 +2,8 @@ import { BsCartPlus } from "react-icons/bs";
 
 export default function ItemPanel({ product, onAdd }) {
   return (
-    <div className="h-48 bg-white border-slate-500 border-8 flex">
-      <img src={product.image} className="h-full p-5" />
+    <div className="h-48 bg-white border-slate-500 border-b-2 flex">
+      <img src={product.image} className="w-44 h-44 p-5 object-contain" />
       <div className="flex flex-col">
         <div className="my-auto text-2xl font-semibold">
           {product.name} ${product.price}
