@@ -2,11 +2,11 @@ import Accordion from "react-bootstrap/Accordion";
 import { AiFillCaretDown } from "react-icons/ai";
 
 export default function Sidebar({ cartItems, onAdd, onRemove }) {
+  //defining the cart total value
   let total = 0;
   for (let i of cartItems) {
     total += i.qty * i.price;
   }
-  console.log(total);
 
   return (
     <div className="flex-col w-1/5 py-8 px-8 items-left bg-slate-300">

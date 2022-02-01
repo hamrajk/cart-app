@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ItemPanel from "../components/ItemPanel";
 import Sidebar from "../components/Sidebar";
@@ -10,6 +11,7 @@ export default function Home() {
   const { products } = data;
   const [cartItems, setCartItems] = useState([]);
 
+  // onclick handler for adding items to cart
   const onAdd = (product) => {
     const exist = cartItems.find((item) => item.id === product.id);
     if (exist) {
@@ -23,6 +25,7 @@ export default function Home() {
     }
   };
 
+  // onclick handler for removing items from cart
   const onRemove = (product) => {
     if (product.qty === 1) {
       setCartItems(cartItems.filter((item) => item.id !== product.id));
@@ -35,7 +38,7 @@ export default function Home() {
     }
   };
 
-  console.log(products);
+  // console.log(products);
   return (
     <div>
       <Head>
@@ -63,9 +66,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-24 text-white items-center justify-center flex bg-slate-900">
-        Copyright &#169; 2022 Woofmart by Hamraj Khangura
-      </div>
+      <Footer />
     </div>
   );
 }
